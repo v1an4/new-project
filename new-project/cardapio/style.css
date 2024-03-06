@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    
+body{
+    display: flex;
+    flex-direction: column;
+    background-image:url("../images/fundo 2.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center ;
+    justify-content: center;
+    gap: 5vh;
+        
+    }
+      
+
+
+.wrap-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .wrap-card{
+        width: 100vw;
+        flex-direction: row;
+        gap: 2vw;
+    }
+  }
+
+
+.tudo{
+    color: rgb(7, 7, 7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh
+}
+
+.error-btn{
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 999px;
+    color:rgba(130, 42,  42, 0.749) ;
+    opacity: 0.7;
+    }
+    .error-btn:hover{
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: rgba(130, 42,  42, 0.749);
+    }
