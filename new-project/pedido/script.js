@@ -1,6 +1,22 @@
+var dataglobal = formatarData(new Date());
+
+function formatarData(date) {
+  var options = {
+    month: "numeric",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  };
+
+  return date.toLocaleString("pt-BR", options);
+}
+
+
 function comecar(){
     var nome = document.getElementById("exampleFormControlInput1").value;
     show(nome);
+    console.log(dataglobal)
  
  }
  
@@ -99,11 +115,11 @@ function comecar(){
          break;
     }
   
-    document.getElementById("cafe-pronto").textContent =
+    document.getElementById("cafe-pronto").textContent = 
       selectCafe.value + " - R$" + cafe;
-    document.getElementById("doce-pronto").textContent =
+    document.getElementById("doce-pronto").textContent = 
       selectDoce.value + " - R$" + doce;
-    document.getElementById("lanche-pronto").textContent =
+    document.getElementById("lanche-pronto").textContent = 
       selectLanche.value + " - R$" + lanche;
     document.getElementById("pedido-pronto").style.display = "flex";
     // Exiba o total no span
@@ -118,4 +134,20 @@ function comecar(){
     document.getElementById("selectDoce").value = "selecione uma doce";
     document.getElementById("selectCafe").value = "selecione uma cafe";
     document.getElementById("selectLanche").value = "selecione um lanche";
+  }
+
+  function enviar() {
+    var numeroTelefone = "5541999999999";
+  
+    var linkWhatsApp =
+      "https://wa.me/" +
+      numeroTelefone +
+      "?text=NOME DO RECEPTOR(A): " +
+      nomeGlobal +
+      " - " +
+      mensagemGlobal +
+      " - " +
+      formatarData(dateGlobal);
+  
+    window.open(linkWhatsApp, "_blank");
   }
