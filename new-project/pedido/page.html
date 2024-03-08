@@ -30,7 +30,7 @@
             <h2>Olá,  <span id="nomeprint"> vamos começar o seu pedido</span></h2>
 
             <h2>Lanches</h2>
-            <select class="form-select" aria-label="Default select example"  id="selectprato"> 
+            <select class="form-select" aria-label="Default select example"  id="selectlanche"> 
               <option selected>Selecione um lanche</option>
               <option value="Bauru">Bauru</option>
               <option value="Misto quente">Misto quente</option>
@@ -40,28 +40,28 @@
             </select>
 
             <h2>Cafés</h2>
-            <select class="form-select" aria-label="Default select example" id="selectbebida">
+            <select class="form-select" aria-label="Default select example" id="selectcafe">
               <option selected>Selecione um café</option>
               <option value="Achocolatado">Achocolatado</option>
               <option value="Expresso">Expresso</option>
               <option value="Capuccino">Capuccino</option>
-              <option value="Mancchiato">Macchiato</option>
+              <option value="Macchiato">Macchiato</option>
               <option value="Irish coffee">Irish coffee</option>
             </select>
 
             <h2>Sucos</h2>
-            <select class="form-select" aria-label="Default select example" id="selectsobremesa">
-              <option selected>Selecione um doce</option>
-              <option value="suco de laranja">suco de laranja</option>
-              <option value="suco de uva">suco de uva</option>
-              <option value="suco de abacaxi">suco de abacaxi</option>
-              <option value="suco de limao">suco de limao</option>
-              <option value="suco de maracujá">suco de maracuja</option>
+            <select class="form-select" aria-label="Default select example" id="selectsuco">
+              <option selected>Selecione um suco</option>
+              <option value="Suco de laranja">Suco de laranja</option>
+              <option value="Suco de uva">Suco de uva</option>
+              <option value="Suco de abacaxi">Suco de abacaxi</option>
+              <option value="Suco de limao">Suco de limao</option>
+              <option value="Suco de maracujá">Suco de maracuja</option>
             </select>
 
            <h2>Bolos e tortas</h2>
-            <select class="form-select" aria-label="Default select example" id="selectsobremesa">
-              <option selected>Selecione um doce</option>
+            <select class="form-select" aria-label="Default select example" id="selectbolo">
+              <option selected>Selecione um bolo ou torta</option>
               <option value="Torta de morango">Torta de morango</option>
               <option value="Bolo de leite ninho">Bolo de leite ninho</option>
               <option value="Bolo de fuba">Bolo de fuba</option>
@@ -70,8 +70,8 @@
             </select>
 
             <h2>Fondue de queijo</h2>
-            <select class="form-select" aria-label="Default select example" id="selectsobremesa">
-              <option selected>Selecione um doce</option>
+            <select class="form-select" aria-label="Default select example" id="selectfondue">
+              <option selected>Selecione um acompanhamento</option>
               <option value="Tomate cereja">Tomate cereja</option>
               <option value="Batatas">Batatas</option>
               <option value="Cubos de filé mignon">Cubos de filé mignon</option>
@@ -79,8 +79,7 @@
               <option value="Cubos de presunto">Cubos de presunto</option>
             </select>
 
-
-           <div class="a1">
+         <div class="a1">
          <button class="btn btn-outline-light" type="button" onclick="calculartotal()">fazer pedido</button>
          <button class="btn btn-outline-light" type="button" onclick="limpar()">limpar</button>
            </div>
@@ -89,6 +88,24 @@
           <span class="badge bg-primary">total:</span>
           <span class="badge bg-secondary" id="resultado"></span>
            </div>
+
+           <div id="pedido-pronto">
+            <p id="cafe-pronto"></p>
+            <br>
+            <p id="suco-pronto"></p>
+            <br>
+            <p id="lanche-pronto"></p>
+            <br>
+            <p id="fondue-pronto"></p>
+            <br>
+            <p id="bolo-pronto"></p>    
+            <br>
+         
+             </div>
+             <div>
+              <button class="btn btn-outline-success" type="button" onclick="zap()">ZAP</button>
+              
+                          </div>
 
           
 

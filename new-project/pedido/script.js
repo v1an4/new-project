@@ -1,4 +1,5 @@
 var dataglobal = formatarData(new Date());
+var totalGlobal = 0;
 
 function formatarData(date) {
   var options = {
@@ -37,93 +38,151 @@ function comecar(){
  }
 
  function calculartotal() {
-    var selectLanche = document.getElementById("selectprato");
-    var selectCafe = document.getElementById("selectsobremesa");
-    var selectDoce = document.getElementById("selectbebida");
+    var selectLanche = document.getElementById("selectlanche");
+    var selectCafe = document.getElementById("selectcafe");
+    var selectSuco = document.getElementById("selectsuco");
+    var selectFondue = document.getElementById("selectfondue");
+    var selectBolo = document.getElementById("selectbolo");
     var resultadoSpan = document.getElementById("resultado");
   
     var total = 0;
     var lanche = 0;
     var cafe = 0;
-    var doce = 0;
+    var suco = 0;
+    var bolo = 0;
+    var fondue = 0;
   
     // Adicione os valores correspondentes às opções selecionadas
     switch (selectLanche.value) {
-      case "bauru":
+      case "Bauru":
         total += 7;
-        prato = 7;
+        lanche = 7;
         break;
-      case "misto quente":
+      case "Misto quente":
         total += 5;
-        prato = 5;
+        lanche = 5;
         break;
-      case "torta de frango":
+      case "Torta de frango":
         total += 6;
-        prato = 6;
+        lanche = 6;
         break;
-      case "enroladinho de salsicha":
+      case "Enroladinho de salsicha":
         total += 4.50;
-        prato = 4.50;
-      case "esfiha":
+        lanche = 4.50;
+      case "Esfiha":
         total += 5;
-        prato = 5;  
+        lanche = 5;  
     }
   
     switch (selectCafe.value) {
-      case "achocolatado":
+      case "Achocolatado":
         total += 8;
-        bebida = 8;
+        cafe = 8;
         break;
-      case "expresso":
+      case "Expresso":
         total += 6;
-        bebida = 6;
+        cafe = 6;
         break;
-      case "capuccino":
+      case "Capuccino":
         total += 8.50;
-        bebida = 8.50;
+        cafe = 8.50;
         break;
-      case "macchiato":
+      case "Macchiato":
         total += 9;
-        bebida = 9;
+        cafe = 9;
         break;
-      case "irish coffee":
+      case "Irish coffee":
         total += 10;
-        bebida = 10;
+        cafe = 10;
         break;
     }
   
-    switch (selectDoce.value) {
-      case "torta de morango":
-        total += 25.50;
-        sobremesa = 25.50;
+    switch (selectSuco.value) {
+      case "Suco de laranja":
+        total += 10;
+        suco = 10;
         break;
-      case "pudim de leite":
-        total += 30.50;
-        sobremesa = 30.50;
+      case "Suco de uva":
+        total += 10;
+        suco = 10;
         break;
-      case "tiramissu":
+      case "Suco de abacaxi":
+        total += 10;
+        suco = 10;
+        break;
+      case "Suco de limao":
+         total += 10;
+         suco = 10;
+         break;
+      case "Suco de maracuja":
+         total += 10;
+         suco = 10;
+         break;
+    }
+  
+    switch (selectBolo.value) {
+      case "Torta de morango":
+        total += 20.50;
+        bolo = 20.50;
+        break;
+      case "Bolo de leite ninho":
+        total += 20.50;
+        bolo = 20.50;
+        break;
+      case "Bolo de fuba":
         total += 16.80;
-        sobremesa = 16.80;
+        bolo = 16.80;
         break;
-      case "brownie":
-         total += 9.80;
-         sobremesa = 9.80;
+      case "Torta de uva":
+         total += 14.00;
+         bolo = 14.00;
          break;
-      case "bolo de chocolate com creme de café":
-         total += 12.50;
-         sobremesa = 12.50;
+      case "Bolo de chocolate com creme de café":
+         total += 16.50;
+         bolo = 16.50;
          break;
     }
   
+    switch (selectFondue.value) {
+      case "Tomate cereja":
+        total += 10.50;
+        fondue = 10.50;
+        break;
+      case "Batatas":
+        total += 13.50;
+        fondue = 13.50;
+        break;
+      case "Cubos de filé mignon":
+        total += 16.80;
+        fondue = 16.80;
+        break;
+      case "Cenoura":
+         total += 8.80;
+         fondue = 8.80;
+         break;
+      case "Cubos de presunto":
+         total += 8.50;
+         fondue = 8.50;
+        break;
+    }
+  
+    console.log(fondue, cafe, bolo, lanche, suco)
     document.getElementById("cafe-pronto").textContent = 
       selectCafe.value + " - R$" + cafe;
-    document.getElementById("doce-pronto").textContent = 
-      selectDoce.value + " - R$" + doce;
+      document.getElementById("fondue-pronto").textContent = 
+      selectFondue.value + " - R$" + fondue;
+      document.getElementById("bolo-pronto").textContent = 
+      selectBolo.value + " - R$" + bolo;
+    document.getElementById("suco-pronto").textContent = 
+      selectSuco.value + " - R$" + suco;
     document.getElementById("lanche-pronto").textContent = 
       selectLanche.value + " - R$" + lanche;
     document.getElementById("pedido-pronto").style.display = "flex";
     // Exiba o total no span
     resultadoSpan.textContent = "R$ " + total.toFixed(2);
+
+    totalGlobal = total.toFixed(2);
+    
   }
   
   function limpar() {
@@ -131,23 +190,24 @@ function comecar(){
     document.getElementById("selects-div").style.display = "none";
     document.getElementById("exampleFormControlInput1").value = " ";
     document.getElementById("resultado").value = " ";
-    document.getElementById("selectDoce").value = "selecione uma doce";
+    document.getElementById("selectBolo").value = "selecione uma bolo";
     document.getElementById("selectCafe").value = "selecione uma cafe";
     document.getElementById("selectLanche").value = "selecione um lanche";
+    document.getElementById("selectSuco").value = "selecione um suco";
+    document.getElementById("selectFondue").value = "selecione um fondue";
+
   }
 
-  function enviar() {
-    var numeroTelefone = "5541999999999";
-  
+  function zap() {
+    var numeroTelefone = "5541995078586";
+    console.log(totalGlobal)
     var linkWhatsApp =
       "https://wa.me/" +
       numeroTelefone +
       "?text=NOME DO RECEPTOR(A): " +
-      nomeGlobal +
-      " - " +
-      mensagemGlobal +
-      " - " +
-      formatarData(dateGlobal);
+      dataglobal +
+      " - " + " R$: " +
+      totalGlobal;
   
     window.open(linkWhatsApp, "_blank");
   }

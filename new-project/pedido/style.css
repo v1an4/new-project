@@ -75,7 +75,7 @@
         color: aliceblue;
     }
 
-    <style>
+   
     .rel {
       position: relative;
       width: 500px;
@@ -95,4 +95,7 @@
       transform: scale(1.2);
       transition: all 800ms linear;
     }
-  </style>
+
+    .pedido-pronto{
+      display: none;
+    }
